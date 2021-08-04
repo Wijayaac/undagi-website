@@ -1,0 +1,13 @@
+#DEVELOPMENT & BUILD SCRIPTS
+public
+.cache
+node_modules
+*DS_Store
+*.env.*
+.wordpress-cache
+
+#yarn lock files
+*.lock
+
+#ORIGINAL CONFIG
+gatsby-config.js

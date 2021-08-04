@@ -1,0 +1,357 @@
+import * as React from "react"
+import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
+
+import Layout from "../components/layout"
+import Seo from "../components/seo"
+const Product = () => (
+  <Layout>
+    <Seo title="Product Undagi Code" />
+
+    <main>
+      <div
+        id="myCarousel"
+        className="carousel slide px-5"
+        data-bs-ride="carousel"
+      >
+        <div className="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide-to="0"
+            className="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div className="carousel-inner">
+          <div className="carousel-item  active">
+            <StaticImage
+              src="../images/ci-hero.png"
+              className="img-fluid bg-dark-50"
+              alt="Example image"
+              width={1440}
+              quality={70}
+              loading="lazy"
+            />
+
+            <div className="container">
+              <div className="carousel-caption text-end">
+                <h1>Undagi Code CodeIgniter</h1>
+                <p>
+                  Buat website dengan framework CodeIgniter jauh lebih mudah dan
+                  hanya beberapa klik saja. Aplikasimu jadi dan bisa dipakai
+                  langsung.
+                </p>
+                <p>
+                  <Link className="btn btn-lg btn-primary" to="/">
+                    Get Free Trial
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="carousel-item">
+            <StaticImage
+              src="../images/lara-hero.png"
+              className="img-fluid bg-dark-50"
+              alt="Example image"
+              width={1440}
+              quality={70}
+              loading="lazy"
+            />
+
+            <div className="container">
+              <div className="carousel-caption text-start">
+                <h1>Undagi Code Laravel</h1>
+                <p>
+                  Buat aplikasi website dengan framework laravel dengan cepat
+                  tanpa coding sama sekali.
+                </p>
+                <p>
+                  <Link className="btn btn-lg btn-primary" to="/">
+                    Selengkapnya
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="carousel-item">
+            <StaticImage
+              src="../images/java-hero.png"
+              className="img-fluid bg-dark-50"
+              alt="Example image"
+              width={1440}
+              quality={70}
+              loading="lazy"
+            />
+            <div className="container">
+              <div className="carousel-caption">
+                <h1>Undagi Code Java</h1>
+                <p>
+                  Undagi Code Java adalah code creator untuk aplikasi desktop,
+                  yang bisa kamu buat tanpa harus belajar coding dari nol,
+                  mudah, cepat, dan tentunya banyak fiturnya.
+                </p>
+                <p>
+                  <Link className="btn btn-lg btn-primary" to="/">
+                    Lihat Cara Kerjanya
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          className="carousel-control-prev"
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide="prev"
+        >
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button
+          className="carousel-control-next"
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide="next"
+        >
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      {/* 
+<!-- Marketing messaging and featurettes
+================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. --> */}
+
+      <div className="container marketing">
+        {/* <!-- Three columns of text below the carousel --> */}
+        <div className="row bg-light p-3">
+          <div className="col-lg-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="96"
+              height="96"
+              fill="currentColor"
+              className="bi bi-lightning mt-3 mb-3"
+              viewBox="0 0 16 16"
+            >
+              <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641l2.5-8.5zM6.374 1 4.168 8.5H7.5a.5.5 0 0 1 .478.647L6.78 13.04 11.478 7H8a.5.5 0 0 1-.474-.658L9.306 1H6.374z" />
+            </svg>
+
+            <h2>Proses Cepat</h2>
+            <p>
+              Hanya dalam waktu kurang dari 5 menit aplikasi mu jadi tanpa harus
+              coding sedikitpun.
+            </p>
+          </div>
+          {/* <!-- /.col-lg-4 --> */}
+          <div className="col-lg-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="96"
+              height="96"
+              fill="currentColor"
+              className="bi bi-check2-circle mt-3 mb-3"
+              viewBox="0 0 16 16"
+            >
+              <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+              <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+            </svg>
+
+            <h2>Mudah Digunakan</h2>
+            <p>
+              Kamu tidak perlu membuat coding dari nol untuk membuat aplikasi,
+              dengan Undagi Code creator kamu hanya tinggal klik - klik saja
+            </p>
+          </div>
+          {/* <!-- /.col-lg-4 --> */}
+          <div className="col-lg-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="96"
+              height="96"
+              fill="currentColor"
+              className="bi bi-layout-wtf mt-3 mb-3"
+              viewBox="0 0 16 16"
+            >
+              <path d="M5 1v8H1V1h4zM1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm13 2v5H9V2h5zM9 1a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9zM5 13v2H3v-2h2zm-2-1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3zm12-1v2H9v-2h6zm-6-1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H9z" />
+            </svg>
+
+            <h2>Fitur Lengkap</h2>
+            <p>
+              Tentunya aplikasi yang dibuat tidak hanya aplikasi statis,
+              aplikasi dinamis yang terhubung dengan database, fitur validasi
+              data yang dimasukkan serta upload gambar maupun file document,
+              export laporan ke dalam file excel maupun pdf
+            </p>
+          </div>
+          {/* <!-- /.col-lg-4 --> */}
+        </div>
+        {/* <!-- /.row --> */}
+
+        {/* <!-- START THE FEATURETTES --> */}
+
+        <hr className="featurette-divider" />
+
+        <div className="row featurette">
+          <div className="col-md-7">
+            <h2 className="featurette-heading">
+              <span className="text-muted">Undagi Code</span> Laravel.
+            </h2>
+            <p className="lead">
+              Aplikasi dengan framework laravel yang mudah dibuat tanpa coding
+              sediktpun, dengan berbagai fitur.
+            </p>
+          </div>
+          <div className="col-md-5">
+            <StaticImage
+              src="../images/lara-hero.png"
+              className="img-fluid bg-dark-50"
+              alt="Example image"
+              height={500}
+              width={800}
+              quality={70}
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <hr className="featurette-divider" />
+
+        <div className="row featurette">
+          <div className="col-md-7 order-md-2">
+            <h2 className="featurette-heading">
+              <span className="text-muted">Undagi Code</span> CodeIgniter.
+            </h2>
+            <p className="lead">
+              Aplikasi website dengan framework CodeIgniter yang dengan mudah
+              dibuat, tanpa coding dan bisa langsung dicoba.
+            </p>
+          </div>
+          <div className="col-md-5 order-md-1">
+            <StaticImage
+              src="../images/ci-hero.png"
+              className="img-fluid bg-dark-50"
+              alt="Example image"
+              height={500}
+              width={800}
+              quality={70}
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <hr className="featurette-divider" />
+
+        <div className="row featurette">
+          <div className="col-md-7">
+            <h2 className="featurette-heading">
+              <span className="text-muted">Undagi Code</span> Java.
+            </h2>
+            <p className="lead">
+              Aplikasi Desktop dibuat dengan bahasa Java, kamu tidak perlu
+              belajar Java dari nol untuk membuat program desktop yang dinamis
+            </p>
+          </div>
+          <div className="col-md-5">
+            <StaticImage
+              src="../images/java-hero.png"
+              className="img-fluid bg-dark-50"
+              alt="Example image"
+              height={500}
+              width={800}
+              quality={70}
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <hr className="featurette-divider" />
+
+        {/* <!-- /END THE FEATURETTES --> */}
+      </div>
+      {/* <!-- /.container --> */}
+      <div className="container-sm" style={{ minHeight: "40vh" }}>
+        <div className="accordion" id="accordionPanelsStayOpenExample">
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="panelsStayOpen-headingOne">
+              <button
+                className="accordion-button text-white bg-info"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseOne"
+                aria-expanded="true"
+                aria-controls="panelsStayOpen-collapseOne"
+              >
+                What's Undagi Code Creator ?
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseOne"
+              className="accordion-collapse collapse show"
+              aria-labelledby="panelsStayOpen-headingOne"
+            >
+              <div className="accordion-body">
+                <strong>What is Undagi Code Java ?.</strong> Code creator is an
+                application that can help you to speed up program creation, and
+                of course, it can used by everyone without any coding skills.
+              </div>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="panelsStayOpen-headingTwo">
+              <button
+                className="accordion-button bg-info text-white collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseTwo"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseTwo"
+              >
+                What's Java Language ?
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseTwo"
+              className="accordion-collapse collapse"
+              aria-labelledby="panelsStayOpen-headingTwo"
+            >
+              <div className="accordion-body">
+                <strong>Java is a widely used programming language.</strong>{" "}
+                Java also have a slogan its a WORA (Write Once, Run Anywhere).
+                So, besides being able to run the Java programming language
+                anywhere, it has stable and fast performance. Therefore, we
+                chose the Java programming language that used to create the code
+                generator results that will run on the desktop environment
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </Layout>
+)
+
+export default Product
