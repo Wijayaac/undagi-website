@@ -22,8 +22,9 @@ const Search = ({ indices }) => {
   const searchClient = useMemo(
     () =>
       algoliasearch(
-        process.env.GATSBY_ALGOLIA_APP_ID,
-        process.env.GATSBY_ALGOLIA_SEARCH_KEY
+        process.env.GATSBY_ALGOLIA_APP_ID || `GO3BM14COC`,
+        process.env.GATSBY_ALGOLIA_SEARCH_KEY ||
+          `5455a6d1a19d33f9e8e8bd0a65a26473`
       ),
     []
   )
