@@ -1,18 +1,17 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
 import { useIntl } from "gatsby-plugin-intl"
 
 import Seo from "../components/seo"
 import Layout from "../components/layout"
 import Search from "../components/search"
+import EnArticle from "../components/post/en-article"
+import IdArticle from "../components/post/id-article"
 
 const searchIndices = [{ name: `Posts`, title: `Posts` }]
 
-export default function Article({ data }) {
+export default function Article() {
   const intl = useIntl()
   const locale = intl.locale !== "en" ? `/${intl.locale}` : ""
-  let posts = data.allWpPost.nodes
   return (
     <Layout>
       <Seo title="Blog page undagi code" />
@@ -34,78 +33,14 @@ export default function Article({ data }) {
         </section>
         <div className="album py-5 bg-light">
           <div className="container">
-            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
-              {posts.map(post => {
-                return (
-                  <div className="col" key={post.slug}>
-                    <Link
-                      className="text-decoration-none"
-                      to={`${locale}/article/${post.slug}`}
-                    >
-                      <div className="card shadow-sm">
-                        {post.featuredImage ? (
-                          <GatsbyImage
-                            alt={post.slug}
-                            image={
-                              post.featuredImage.node.localFile.childImageSharp
-                                .gatsbyImageData
-                            }
-                          />
-                        ) : (
-                          <svg
-                            className="bd-placeholder-img card-img-top"
-                            width="100%"
-                            height="225"
-                            xmlns="http://www.w3.org/2000/svg"
-                            role="img"
-                            aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice"
-                            focusable="false"
-                          >
-                            <rect width="100%" height="100%" fill="#55595c" />
-                            <text x="0%" y="50%" fill="#eceeef" dy=".1em">
-                              {post.title}
-                            </text>
-                          </svg>
-                        )}
-                        <div className="card-body">
-                          <h4 className="text-dark">{post.title}</h4>
-                          <p
-                            className="card-text text-secondary"
-                            dangerouslySetInnerHTML={{ __html: post.excerpt }}
-                          />
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                )
-              })}
-            </div>
+            {locale === "" ? (
+              <EnArticle locale={locale} />
+            ) : (
+              <IdArticle locale={locale} />
+            )}
           </div>
         </div>
       </main>
     </Layout>
   )
 }
-
-// export const query = graphql`
-//   query {
-//     allWpPost {
-//       nodes {
-//         title
-//         date
-//         excerpt
-//         slug
-//         featuredImage {
-//           node {
-//             localFile {
-//               childImageSharp {
-//                 gatsbyImageData(layout: FULL_WIDTH)
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `

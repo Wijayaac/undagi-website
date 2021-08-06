@@ -1,13 +1,14 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 import { useIntl } from "gatsby-plugin-intl"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import EnPost from "../components/post/en-home"
+import IdPost from "../components/post/id-home"
 
-export default function Home({ data }) {
-  let posts = data.allWpPost.nodes
+export default function Home() {
   const intl = useIntl()
   const locale = intl.locale !== "en" ? `/${intl.locale}` : ""
   return (
@@ -62,7 +63,7 @@ export default function Home({ data }) {
             <StaticImage
               src="../images/UCCodeIgniter.svg"
               className="mb-4"
-              alt="Example image"
+              alt="UCCodeIgniter"
               width={100}
               quality={80}
               loading="lazy"
@@ -80,7 +81,7 @@ export default function Home({ data }) {
             <StaticImage
               src="../images/UCJava.svg"
               className="mb-4"
-              alt="Example image"
+              alt="UCJava"
               width={100}
               quality={80}
               loading="lazy"
@@ -98,7 +99,7 @@ export default function Home({ data }) {
             <StaticImage
               src="../images/UCLaravel.svg"
               className="mb-4"
-              alt="Example image"
+              alt="UcLaravel"
               width={100}
               quality={80}
               loading="lazy"
@@ -125,7 +126,7 @@ export default function Home({ data }) {
                     src="https://www.youtube.com/embed/jeR2mGXSO-o?rel=0"
                     title="YouTube video player"
                     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
+                    allowFullScreen
                   ></iframe>
                 </div>
 
@@ -144,9 +145,9 @@ export default function Home({ data }) {
                   <iframe
                     src="https://www.youtube.com/embed/DTzxp5EXFLM"
                     title="YouTube video player"
-                    frameborder="0"
+                    frameBorder="0"
                     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
+                    allowFullScreen
                   ></iframe>
                 </div>
 
@@ -165,9 +166,9 @@ export default function Home({ data }) {
                   <iframe
                     src="https://www.youtube.com/embed/JUC2VC0bbOA"
                     title="YouTube video player"
-                    frameborder="0"
+                    frameBorder="0"
                     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
+                    allowFullScreen
                   ></iframe>
                 </div>
 
@@ -186,9 +187,9 @@ export default function Home({ data }) {
                   <iframe
                     src="https://www.youtube.com/embed/jeR2mGXSO-o"
                     title="YouTube video player"
-                    frameborder="0"
+                    frameBorder="0"
                     allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
+                    allowFullScreen
                   ></iframe>
                 </div>
 
@@ -212,7 +213,7 @@ export default function Home({ data }) {
             <StaticImage
               src="../images/features.png"
               className="img-fluid border rounded-3 shadow-lg mb-4"
-              alt="Example image"
+              alt="features"
               width={800}
               quality={70}
               loading="lazy"
@@ -245,61 +246,13 @@ export default function Home({ data }) {
       <div className="album py-5 bg-light">
         <div className="container">
           <p className="fs-3">Read our article</p>
-          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
-            {posts.map(post => {
-              return (
-                <div className="col" key={post.slug}>
-                  <div className="card shadow-sm">
-                    <GatsbyImage
-                      image={
-                        post.featuredImage.node.localFile.childImageSharp
-                          .gatsbyImageData
-                      }
-                    />
-                    <div className="card-body">
-                      <Link
-                        className="text-decoration-none"
-                        to={`${locale}/article/${post.slug}`}
-                      >
-                        <h4 className="text-dark">{post.title}</h4>
-                        <p
-                          className="card-text text-secondary"
-                          dangerouslySetInnerHTML={{ __html: post.excerpt }}
-                        />
-                      </Link>
-                    </div>
-                    <div className="card-footer">
-                      <p>{post.date}</p>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
+          {locale === "" ? (
+            <EnPost locale={locale} />
+          ) : (
+            <IdPost locale={locale} />
+          )}
         </div>
       </div>
     </Layout>
   )
 }
-
-export const query = graphql`
-  query {
-    allWpPost(limit: 4) {
-      nodes {
-        featuredImage {
-          node {
-            localFile {
-              childImageSharp {
-                gatsbyImageData(layout: FULL_WIDTH)
-              }
-            }
-          }
-        }
-        slug
-        title
-        date(fromNow: true)
-        excerpt
-      }
-    }
-  }
-`
