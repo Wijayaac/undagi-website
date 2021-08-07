@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useRef, useEffect } from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import { Disqus } from "gatsby-plugin-disqus"
@@ -15,6 +15,12 @@ export default function BlogPost({ data }) {
     identifier: post.slug,
     title: post.title,
   }
+  const [containerRef] = useElementOnScreen({
+    root: null,
+    rootMargin: "0px",
+    threshold: 1.0,
+  })
+
   return (
     <Layout>
       <main className="container">
@@ -43,6 +49,9 @@ export default function BlogPost({ data }) {
               className="blog-post"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
+            <div ref={containerRef} className="disqus-thread">
+              <Disqus config={disqusConfig} />
+            </div>
           </div>
 
           <div className="col-md-4">
@@ -101,7 +110,6 @@ export default function BlogPost({ data }) {
             </div>
           </div>
         </div>
-        <Disqus config={disqusConfig} />
       </main>
     </Layout>
   )
@@ -124,3 +132,21 @@ export const query = graphql`
     }
   }
 `
+
+const useElementOnScreen = options => {
+  const containerRef = useRef(null)
+  const [isVisible, setIsVisible] = useState(false)
+  const callbackFunction = entries => {
+    const [entry] = entries
+    setIsVisible(entry.isIntersecting)
+  }
+  useEffect(() => {
+    const observer = new IntersectionObserver(callbackFunction, options)
+    if (containerRef.current) observer.observe(containerRef.current)
+    return () => {
+      if (containerRef.current) observer.unobserve(containerRef.current)
+      observer.disconnect()
+    }
+  }, [containerRef, options])
+  return [containerRef, isVisible]
+}

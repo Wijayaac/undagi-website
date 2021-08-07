@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import EnPost from "../components/post/en-home"
 import IdPost from "../components/post/id-home"
+import YoutubeEmbed from "../components/youtube-embed"
 
 export default function Home() {
   const intl = useIntl()
@@ -116,94 +117,7 @@ export default function Home() {
 
       {/* Youtube Videos Sections */}
       <div className="album py-5 bg-light">
-        <div className="container">
-          <p className="fs-3">Watch on Youtube</p>
-          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
-            <div className="col">
-              <div className="card shadow-sm">
-                <div className="ratio ratio-16x9">
-                  <iframe
-                    src="https://www.youtube.com/embed/jeR2mGXSO-o?rel=0"
-                    title="YouTube video player"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-
-                <div className="card-body">
-                  <p className="card-text">
-                    Video guide on how to install Undagi Code CodeIgniter, and
-                    start create a new project soon, with rich features, and
-                    fast development time.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card shadow-sm">
-                <div className="ratio ratio-16x9">
-                  <iframe
-                    src="https://www.youtube.com/embed/DTzxp5EXFLM"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-
-                <div className="card-body">
-                  <p className="card-text">
-                    Web development tutorial with Undagi Code Laravel, create
-                    fast, CRUD features website application, in just five
-                    minutes development time.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card shadow-sm">
-                <div className="ratio ratio-16x9">
-                  <iframe
-                    src="https://www.youtube.com/embed/JUC2VC0bbOA"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-
-                <div className="card-body">
-                  <p className="card-text">
-                    Create desktop application with CRUD module, in just five
-                    minutes. Dinamic data storage using MySQL and soon another
-                    DBMS. Undagi Code Java.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card shadow-sm">
-                <div className="ratio ratio-16x9">
-                  <iframe
-                    src="https://www.youtube.com/embed/jeR2mGXSO-o"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-
-                <div className="card-body">
-                  <p className="card-text">
-                    Video guide on how to install Undagi Code CodeIgniter, and
-                    start create a new project soon, with rich features, and
-                    fast development time.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <YoutubeEmbed />
       </div>
 
       {/* Banner Sections */}
