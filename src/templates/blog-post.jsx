@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from "react"
-import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import { Disqus } from "gatsby-plugin-disqus"
 import { useIntl } from "gatsby-plugin-intl"
+import { useInView } from "react-intersection-observer"
+import Layout from "../components/layout"
 
 export default function BlogPost({ data }) {
   const intl = useIntl()
@@ -15,6 +16,11 @@ export default function BlogPost({ data }) {
     identifier: post.slug,
     title: post.title,
   }
+  const { ref, inView, entry } = useInView({
+    threshold: 0,
+    triggerOnce: true,
+    rootMargin: "200px 0px",
+  })
   const [containerRef] = useElementOnScreen({
     root: null,
     rootMargin: "0px",
@@ -49,9 +55,6 @@ export default function BlogPost({ data }) {
               className="blog-post"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
-            <div ref={containerRef} className="disqus-thread">
-              <Disqus config={disqusConfig} />
-            </div>
           </div>
 
           <div className="col-md-4">
@@ -108,6 +111,9 @@ export default function BlogPost({ data }) {
                 </ol>
               </div>
             </div>
+          </div>
+          <div ref={ref} className="col-md-8 disqus-thread">
+            {inView && <Disqus config={disqusConfig} />}
           </div>
         </div>
       </main>
