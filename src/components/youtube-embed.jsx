@@ -8,7 +8,11 @@ const YoutubeEmbed = () => {
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
         <div className="col">
           <div className="card shadow-sm">
-            <LiteYouTubeEmbed id="jeR2mGXSO-o" title="YouTube video player" />
+            <LiteYouTubeEmbed
+              id="jeR2mGXSO-o"
+              poster="default"
+              title="YouTube video player"
+            />
             <div className="card-body">
               <p className="card-text">
                 Video guide on how to install Undagi Code CodeIgniter, and start
@@ -20,7 +24,11 @@ const YoutubeEmbed = () => {
         </div>
         <div className="col">
           <div className="card shadow-sm">
-            <LiteYouTubeEmbed id="DTzxp5EXFLM" title="YouTube video player" />
+            <LiteYouTubeEmbed
+              id="DTzxp5EXFLM"
+              poster="default"
+              title="YouTube video player"
+            />
             <div className="card-body">
               <p className="card-text">
                 Web development tutorial with Undagi Code Laravel, create fast,
@@ -32,7 +40,11 @@ const YoutubeEmbed = () => {
         </div>
         <div className="col">
           <div className="card shadow-sm">
-            <LiteYouTubeEmbed id="JUC2VC0bbOA" title="YouTube video player" />
+            <LiteYouTubeEmbed
+              id="JUC2VC0bbOA"
+              poster="default"
+              title="YouTube video player"
+            />
             <div className="card-body">
               <p className="card-text">
                 Create desktop application with CRUD module, in just five
@@ -44,7 +56,11 @@ const YoutubeEmbed = () => {
         </div>
         <div className="col">
           <div className="card shadow-sm">
-            <LiteYouTubeEmbed id="jeR2mGXSO-o" title="YouTube video player" />
+            <LiteYouTubeEmbed
+              id="jeR2mGXSO-o"
+              poster="default"
+              title="YouTube video player"
+            />
             <div className="card-body">
               <p className="card-text">
                 Video guide on how to install Undagi Code CodeIgniter, and start
