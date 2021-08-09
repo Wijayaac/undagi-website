@@ -25,7 +25,7 @@ export default function Contact() {
               <Link className="nav-link active" to="/contact">
                 Contact
               </Link>
-              <Link className="nav-link" to="/blog">
+              <Link className="nav-link" to="/article">
                 Articles
               </Link>
             </nav>
