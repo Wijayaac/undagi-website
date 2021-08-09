@@ -43,7 +43,7 @@ const Header = ({ siteTitle }) => {
           <li className="nav-item fw-bold">
             <a
               className="nav-link text-dark"
-              href="https://hardcore-cray-abde93.netlify.app/"
+              href="https://doc.undagicode.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
