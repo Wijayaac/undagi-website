@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { Disqus } from "gatsby-plugin-disqus"
 import { useIntl } from "gatsby-plugin-intl"
 import { useInView } from "react-intersection-observer"
-import Layout from "../components/layout"
+import Layout from "../components/layout/"
 
 export default function BlogPost({ data }) {
   const intl = useIntl()

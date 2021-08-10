@@ -1,7 +1,8 @@
 import React from "react"
 import LiteYouTubeEmbed from "react-lite-youtube-embed"
-
+import { useIntl } from "gatsby-plugin-intl"
 const YoutubeEmbed = () => {
+  const intl = useIntl()
   return (
     <div className="container">
       <p className="fs-3">Watch on Youtube</p>
@@ -15,9 +16,7 @@ const YoutubeEmbed = () => {
             />
             <div className="card-body">
               <p className="card-text">
-                Video guide on how to install Undagi Code CodeIgniter, and start
-                create a new project soon, with rich features, and fast
-                development time.
+                {intl.formatMessage({ id: "homeYTUC" })}
               </p>
             </div>
           </div>
@@ -31,9 +30,7 @@ const YoutubeEmbed = () => {
             />
             <div className="card-body">
               <p className="card-text">
-                Web development tutorial with Undagi Code Laravel, create fast,
-                CRUD features website application, in just five minutes
-                development time.
+                {intl.formatMessage({ id: "homeYTLV" })}
               </p>
             </div>
           </div>
@@ -47,9 +44,7 @@ const YoutubeEmbed = () => {
             />
             <div className="card-body">
               <p className="card-text">
-                Create desktop application with CRUD module, in just five
-                minutes. Dinamic data storage using MySQL and soon another DBMS.
-                Undagi Code Java.
+                {intl.formatMessage({ id: "homeYTJV" })}
               </p>
             </div>
           </div>
@@ -63,9 +58,7 @@ const YoutubeEmbed = () => {
             />
             <div className="card-body">
               <p className="card-text">
-                Video guide on how to install Undagi Code CodeIgniter, and start
-                create a new project soon, with rich features, and fast
-                development time.
+                {intl.formatMessage({ id: "homeYTUC" })}
               </p>
             </div>
           </div>

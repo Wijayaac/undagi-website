@@ -19,25 +19,30 @@ export default function Home() {
       <div className="px-4 pt-5 my-5 text-center border-bottom">
         <h1 className="display-4 fw-bold">Undagi Code Creator</h1>
         <div className="col-lg-8 mx-auto">
-          <p className="lead mb-4">
-            Buat dengan cepat dan tanpa coding sedikitpun aplikasi website
-            maupun desktop, dengan Undagi Code creator kamu tidka perlu belajar
-            coding dari nol untuk membuat aplikasi yang bisa kamu gunakan untuk
-            kebutuhan tugas, kantor, maupun untuk kamu kembangkan menjadi
-            aplikasi yang lebih besar.
-          </p>
+          <p className="lead mb-4">{intl.formatMessage({ id: "homeHero" })}</p>
           <div className="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
             <button
               type="button"
               className="btn btn-primary btn-lg px-4 me-sm-3"
             >
-              Coba Gratis
+              <Link
+                className="text-decoration-none text-white fw-bold"
+                to={`${locale}/product`}
+              >
+                {intl.formatMessage({ id: "homeBtnHeroPrim" })}
+              </Link>
             </button>
             <button
               type="button"
               className="btn btn-outline-secondary btn-sm px-4"
             >
-              Cara Penggunaan
+              <a
+                className="text-decoration-none text-secondary"
+                href="https://doc.undagicode.com/"
+                target="_blank"
+              >
+                {intl.formatMessage({ id: "homeBtnHeroSec" })}
+              </a>
             </button>
           </div>
         </div>
@@ -135,21 +140,20 @@ export default function Home() {
           </div>
           <div className="col-lg-6">
             <h1 className="display-5 fw-bold lh-1 mb-3">
-              Dilengkapi berbagai fitur
+              {intl.formatMessage({ id: "homeFeaturedTL" })}
             </h1>
-            <p className="lead">
-              Dengan Undagi Code Creator kamu bisa membuat sebuah aplikasi yang
-              memiliki fitur Validasi, Export laporan ke file MS. Excel / PDF,
-              Upload gambar dan file document seperti PDF/ Ms. Word. Dan yang
-              paling penting adalah bisa di berbagai platform, Desktop , Website
-              hanya dalam waktu 5 menit.
-            </p>
+            <p className="lead">{intl.formatMessage({ id: "homeFeatured" })}</p>
             <div className="d-grid gap-2 d-md-flex justify-content-md-start">
               <button
                 type="button"
                 className="btn btn-primary btn-lg px-4 me-md-2"
               >
-                Coba Sekarang
+                <Link
+                  className="text-decoration-none text-white fw-bold"
+                  to={`${locale}/product`}
+                >
+                  {intl.formatMessage({ id: "homeBtnFeatured" })}
+                </Link>
               </button>
             </div>
           </div>
@@ -159,7 +163,7 @@ export default function Home() {
       {/* Internal Blogs Sections */}
       <div className="album py-5 bg-light">
         <div className="container">
-          <p className="fs-3">Read our article</p>
+          <p className="fs-3">{intl.formatMessage({ id: "homeArticleTL" })}</p>
           {locale === "" ? (
             <EnPost locale={locale} />
           ) : (

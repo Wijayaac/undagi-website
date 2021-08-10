@@ -21,9 +21,7 @@ export default function Article() {
             <div className="col-lg-6 col-md-8 mx-auto">
               <h1 className="fw-light">Articles</h1>
               <p className="lead text-muted">
-                Sebarkan pengetahuanmu sehingga kamu selalu uptodate dengan
-                teknologi yang ada pada saat ini, pengembangkan projectmu dengan
-                lebih baik bersama Undagi Code Creator
+                {intl.formatMessage({ id: "articleHero" })}
               </p>
             </div>
             <div className="container d-flex d-flex-column justify-content-center">

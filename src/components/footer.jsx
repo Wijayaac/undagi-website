@@ -104,8 +104,9 @@ const Footer = () => (
             </li>
             <li className="list-group-item">
               <a
+                target="_blank"
                 className="text-decoration-none"
-                to="https://hardcore-cray-abde93.netlify.app/"
+                to="https://doc.undagicode.com/"
               >
                 How To Tutorials
               </a>
@@ -136,14 +137,25 @@ const Footer = () => (
           <ul className="list-group list-group-flush">
             <li className="list-group-item">
               <a
+                target="_blank"
                 className="text-decoration-none"
-                href="http://grahailmu.id/product/simple-fun-java-pemograman-java-gui-dengan-eclipse-ide-dan-project-game/"
+                href="http://grahailmu.id/product/simple-fun-java-membuat-crud-data-master-dalam-5-menit-java-mysql-json-eclipse-ide/"
               >
-                Simple Fun Java
+                Simple Fun Java-CRUD Master
               </a>
             </li>
             <li className="list-group-item">
               <a
+                target="_blank"
+                className="text-decoration-none"
+                href="http://grahailmu.id/product/simple-fun-java-pemograman-java-gui-dengan-eclipse-ide-dan-project-game/"
+              >
+                Simple Fun Java-Game Project
+              </a>
+            </li>
+            <li className="list-group-item">
+              <a
+                target="_blank"
                 className="text-decoration-none"
                 href="https://www.facebook.com/undagicode/"
               >
@@ -152,6 +164,7 @@ const Footer = () => (
             </li>
             <li className="list-group-item">
               <a
+                target="_blank"
                 className="text-decoration-none"
                 href="https://www.youtube.com/channel/UCfbr75DW_MZ1RAImm7-py7g"
               >

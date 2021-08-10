@@ -3,8 +3,12 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { useIntl } from "gatsby-plugin-intl"
+import { useLocation } from "@reach/router"
+
+import LanguageSwitcher from "./LanguageSwitcher"
 
 const Header = ({ siteTitle }) => {
+  const location = useLocation()
   const intl = useIntl()
   const locale = intl.locale !== "en" ? `/${intl.locale}` : ""
 
@@ -60,6 +64,7 @@ const Header = ({ siteTitle }) => {
               {intl.formatMessage({ id: "articles" })}
             </Link>
           </li>
+          {location.pathname.length <= 11 && <LanguageSwitcher />}
         </ul>
       </header>
     </div>

@@ -1,10 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
-import "../../src/components/layout.css"
+import { useIntl } from "gatsby-plugin-intl"
+import "../../src/components/layout/layout.css"
 import Seo from "../components/seo"
-// import { StaticImage } from "gatsby-plugin-image"
 
 export default function Contact() {
+  const intl = useIntl()
+  const locale = intl.locale !== "en" ? `/${intl.locale}` : ""
   return (
     <div className="d-flex vh-100 text-white bg-dark">
       <Seo title="Contact" />
@@ -13,20 +15,20 @@ export default function Contact() {
           <div>
             <h3 className="float-md-start mb-0">Undagi Code</h3>
             <nav className="nav nav-masthead justify-content-center float-md-end">
-              <Link className="nav-link" aria-current="page" to="/">
-                Home
+              <Link className="nav-link" aria-current="page" to={`${locale}/`}>
+                {intl.formatMessage({ id: "home" })}
               </Link>
-              <Link className="nav-link" to="/product">
-                Product
+              <Link className="nav-link" to={`${locale}/product`}>
+                {intl.formatMessage({ id: "products" })}
               </Link>
-              <Link className="nav-link" to="/documentation">
-                Documentation
+              <Link className="nav-link" to={`${locale}/documentation`}>
+                {intl.formatMessage({ id: "documentation" })}
               </Link>
-              <Link className="nav-link active" to="/contact">
-                Contact
+              <Link className="nav-link active" to={`${locale}/contact`}>
+                {intl.formatMessage({ id: "contact" })}
               </Link>
-              <Link className="nav-link" to="/article">
-                Articles
+              <Link className="nav-link" to={`${locale}/article`}>
+                {intl.formatMessage({ id: "articles" })}
               </Link>
             </nav>
           </div>
@@ -44,6 +46,7 @@ export default function Contact() {
                     type="email"
                     className="form-control"
                     id="exampleInputEmail1"
+                    placeholder="john@doe.com"
                     aria-describedby="emailHelp"
                   />
                   <div id="emailHelp" className="form-text">
@@ -55,12 +58,13 @@ export default function Contact() {
                     Subject
                   </label>
                   <input
+                    placeholder="ex: ask Undagi Code"
                     type="text"
                     className="form-control"
                     id="exampleInputtext"
                   />
                 </div>
-                <div className="form-floating">
+                <div className="mb-3">
                   <label forHtml="floatingTextarea2 text-dark-50">
                     Message
                   </label>
@@ -72,17 +76,13 @@ export default function Contact() {
                   ></textarea>
                 </div>
                 <button type="submit" className="btn btn-primary mt-2">
-                  Send Email
+                  Send Message
                 </button>
               </form>
             </div>
             <div className="col-md-6 col-lg-6">
-              <h1>Cover your page.</h1>
-              <p className="lead">
-                Cover is a one-page template for building simple and beautiful
-                home pages. Download, edit the text, and add your own fullscreen
-                background photo to make it your own.
-              </p>
+              <h1>{intl.formatMessage({ id: "contactTL" })}</h1>
+              <p className="lead">{intl.formatMessage({ id: "contactDS" })}</p>
             </div>
           </div>
         </main>
