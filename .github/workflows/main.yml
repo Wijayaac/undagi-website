@@ -32,5 +32,5 @@ jobs:
         server: ftp.undagicode.com
         username: ${{ secrets.username }}
         password: ${{ secrets.password }}
-        local-dir: ./production/
-        dangerous-clean-slate: true
+        local-dir: ./public/
+        server-dir: ./production/
