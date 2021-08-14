@@ -9,5 +9,3 @@ node_modules
 #yarn lock files
 *.lock
 
-#ORIGINAL CONFIG
-gatsby-config.js

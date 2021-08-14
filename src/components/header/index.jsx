@@ -20,7 +20,7 @@ const Header = ({ siteTitle }) => {
           className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none"
         >
           <StaticImage
-            src="../images/logo-image.png"
+            src="../../images/logo-image.png"
             width={48}
             quality={70}
             formats={["AUTO", "WEBP", "AVIF"]}

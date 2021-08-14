@@ -1,0 +1,36 @@
+name: 🚀 Deploy website on Manual Trigger
+on: workflow_dispatch
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+
+    - name: Use Node.js 12
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: '12'
+      
+    - name: 🔨 Build Project
+      run: |
+        npm install -g yarn
+        yarn install
+        yarn build
+      env:
+        GATSBY_ALGOLIA_APP_ID: ${{ secrets.gatsby_algolia_app_id }}
+        ALGOLIA_ADMIN_KEY: ${{ secrets.algolia_admin_key }}
+        GATSBY_ALGOLIA_SEARCH_KEY: ${{ secrets.gatsby_algolia_search_key }}
+        GATSBY_SOURCE_WP_URL: ${{ secrets.gatsby_source_wp_url }}
+        GATSBY_URL: "https://undagicode.com/"
+        GATSBY_DISQUS_SHORTNAME: "undagicode"
+        GATSBY_PHONE: "6281239884949"
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+      with:
+        server: ftp.undagicode.com
+        username: ${{ secrets.username }}
+        password: ${{ secrets.password }}
+        local-dir: ./production/
+        dangerous-clean-slate: true

@@ -55,12 +55,13 @@ const Product = () => {
                   <h1>Undagi Code CodeIgniter</h1>
                   <p>{intl.formatMessage({ id: "productHeroCI" })}</p>
                   <p>
-                    <Link
+                    <a
                       className="btn btn-lg btn-primary"
-                      to={`${locale}/product#ciFeatured`}
+                      href="https://bit.ly/3zAXVR4"
+                      target="_blank"
                     >
                       {intl.formatMessage({ id: "productHeroBtnCI" })}
-                    </Link>
+                    </a>
                   </p>
                 </div>
               </div>
@@ -106,7 +107,7 @@ const Product = () => {
                   <p>
                     <a
                       className="btn btn-lg btn-primary"
-                      href="https://doc.undagicode.com/"
+                      href="https://bit.ly/3zAXVR4"
                     >
                       {intl.formatMessage({ id: "productHeroBtnJV" })}
                     </a>

@@ -54,7 +54,7 @@ const Footer = () => (
               <path d="M8.47 1.318a1 1 0 0 0-.94 0l-6 3.2A1 1 0 0 0 1 5.4v.818l5.724 3.465L8 8.917l1.276.766L15 6.218V5.4a1 1 0 0 0-.53-.882l-6-3.2zM15 7.388l-4.754 2.877L15 13.117v-5.73zm-.035 6.874L8 10.083l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738zM1 13.117l4.754-2.852L1 7.387v5.73zM7.059.435a2 2 0 0 1 1.882 0l6 3.2A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765l6-3.2z" />
             </svg>
             <a
-              className="text-decoration-none text-dark"
+              className="text-decoration-none border-bottom border-2 border-primary text-dark"
               href="mailto:candrawinetra@pnb.ac.id"
             >
               Candra Winetra
@@ -79,7 +79,8 @@ const Footer = () => (
             <li className="list-group-item">
               <a
                 className="text-decoration-none"
-                href="https://hardcore-cray-abde93.netlify.app/"
+                href="https://doc.undagicode.com/"
+                target="_blank"
               >
                 Documentation
               </a>
@@ -135,6 +136,11 @@ const Footer = () => (
             <h2 className="d-inline px-3">Inquiries</h2>
           </div>
           <ul className="list-group list-group-flush">
+            <li className="list-group-item">
+              <Link className="text-decoration-none" to="/checkout">
+                Buy Undagi Code
+              </Link>
+            </li>
             <li className="list-group-item">
               <a
                 target="_blank"

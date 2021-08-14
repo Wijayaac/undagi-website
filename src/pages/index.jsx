@@ -25,12 +25,13 @@ export default function Home() {
               type="button"
               className="btn btn-primary btn-lg px-4 me-sm-3"
             >
-              <Link
+              <a
                 className="text-decoration-none text-white fw-bold"
-                to={`${locale}/product`}
+                href="https://bit.ly/3zAXVR4"
+                target="_blank"
               >
                 {intl.formatMessage({ id: "homeBtnHeroPrim" })}
-              </Link>
+              </a>
             </button>
             <button
               type="button"
@@ -75,7 +76,7 @@ export default function Home() {
               loading="lazy"
             />
             <Link
-              to="/undagi"
+              to={`${locale}/product`}
               className="d-block card-title pricing-card-title fs-6 fw-bold text-decoration-none"
             >
               Undagi Code CodeIgniter
@@ -93,7 +94,7 @@ export default function Home() {
               loading="lazy"
             />
             <Link
-              to="/undagi"
+              to={`${locale}/product`}
               className="d-block card-title pricing-card-title fs-6 fw-bold text-decoration-none"
             >
               Undagi Code Java
@@ -111,7 +112,7 @@ export default function Home() {
               loading="lazy"
             />
             <Link
-              to="/undagi"
+              to={`${locale}/product`}
               className="d-block card-title pricing-card-title fs-6 fw-bold text-decoration-none"
             >
               Undagi Code Laravel

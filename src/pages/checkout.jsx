@@ -4,7 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 export default function Checkout() {
   const URL = "https://api.whatsapp.com/send?phone="
-  const PHONE = process.env.GATSBY_PHONE || 6281239884949
+  const PHONE = process.env.GATSBY_PHONE
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [address, setAddress] = useState("")
